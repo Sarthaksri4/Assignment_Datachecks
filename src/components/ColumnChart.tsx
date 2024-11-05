@@ -1,9 +1,11 @@
 import React from 'react';
 import ApexChart from "react-apexcharts";
 
+interface ColumnChartProps {
+  visitorsPerCountry: Map<string, number>;
+}
 
-
-const ColumnChart: React.FC<ColumnChartProps> = ({visitorsPerCountry}) => {
+const ColumnChart: React.FC<ColumnChartProps> = ({ visitorsPerCountry }) => {
   const state = {
     series: [{
       name: 'Visitor',
@@ -67,10 +69,10 @@ const ColumnChart: React.FC<ColumnChartProps> = ({visitorsPerCountry}) => {
         }
       },
       title: {
-        text: 'Monthly visitors Per Counrty',
+        text: 'Monthly Visitors Per Country',
         align: 'center',
         style: {
-          fontSize : "15px",
+          fontSize: "15px",
           color: '#fff'
         }
       },
@@ -82,7 +84,9 @@ const ColumnChart: React.FC<ColumnChartProps> = ({visitorsPerCountry}) => {
           background: '#333',
         },
       },
-      
+      fill: {
+        colors: ['#660020'],
+      }
     },
   };
 
@@ -90,7 +94,7 @@ const ColumnChart: React.FC<ColumnChartProps> = ({visitorsPerCountry}) => {
     <div className="charts">
       <div className="chart">
         <h2>Column Chart</h2>
-        <ApexChart options={state.options as any} series={state.series} type="bar" height={400} width={800}/>
+        <ApexChart options={state.options as any} series={state.series} type="bar" height={400} width={800} />
       </div>
     </div>
   );

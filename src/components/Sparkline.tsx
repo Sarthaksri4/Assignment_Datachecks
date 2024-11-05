@@ -1,11 +1,15 @@
 import React from 'react';
 import ApexChart from 'react-apexcharts';
 
+interface SparklineProps {
+  visitorsPerDay: Map<string, number>;
+  visitor: string;
+}
 
-const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
+const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay, visitor }) => {
   const values = Array.from(visitorsPerDay.values());
   const sum = values.reduce((total, value) => total + value, 0);
-    
+
   const series = [
     {
       name: 'Adult Visitors',
@@ -14,8 +18,7 @@ const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
         style: {
           colors: '#000',
         },
-      },     
-      
+      },
     },
   ];
 
@@ -28,9 +31,11 @@ const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
     },
     stroke: {
       curve: 'smooth',
+      colors: ['#660020'],
     },
     fill: {
       opacity: 1,
+      colors: ['#660020'],
     },
     xaxis: {
       categories: Array.from(visitorsPerDay.keys()),
@@ -39,15 +44,15 @@ const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
       },
     },
     yaxis: {
-      min: 0, 
-      show: false,    
+      min: 0,
+      show: false,
     },
     title: {
-      text: sum,
+      text: sum.toString(),
       offsetX: 0,
       style: {
         fontSize: '25px',
-        color : "#ffffff",
+        color: "#ffffff",
       },
     },
     subtitle: {
@@ -55,7 +60,7 @@ const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
       offsetX: 0,
       style: {
         fontSize: '15px',
-        color : "#ffffff",
+        color: "#ffffff",
       },
     },
     tooltip: {
@@ -67,8 +72,6 @@ const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
       },
     },
   };
-
-
 
   return (
     <div>
