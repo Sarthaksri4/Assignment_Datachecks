@@ -2,7 +2,7 @@
   background-color: #fefefe;
   min-height: 100vh;
   padding: 20px; 
-  border: 20px solid #660020; 
+  border: 10px solid #660020; 
   border-radius: 10px; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
@@ -15,12 +15,15 @@
   margin-bottom: 20px;
   font-size: 40px;
   font-family: 'Roboto', sans-serif;
-  background-color: #660020; 
+  background-color: #fffdfe; 
+  border: 1px solid #000;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .button {
   position: absolute;
-  top: 150px;
+  top: 140px;
   right: 80px;
   font-size: 15px;
   font-weight: 600;
@@ -70,7 +73,7 @@
   border: 1px solid #000;
   border-radius: 5px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  background-color:  #660020; 
+  background-color:  #ffffff; 
 }
 
 .date-picker .react-datepicker {
@@ -120,7 +123,7 @@
 
 .date-picker .react-datepicker__day {
   border: 1px solid #ccc;
-  color: #333;
+  color: #d00b0b;
   font-weight: 400;
 }
 
