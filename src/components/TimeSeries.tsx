@@ -1,8 +1,6 @@
 import ApexChart from "react-apexcharts";
 
-interface TimeSeriesProps {
-  visitorsPerDay: Map<string, number>;
-}
+
 
 const TimeSeries: React.FC<TimeSeriesProps> = ({ visitorsPerDay }) => {
   const parseDate = (dateStr: string, count: any) => {

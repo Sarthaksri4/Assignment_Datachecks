@@ -1,9 +1,7 @@
 import React from 'react';
 import ApexChart from "react-apexcharts";
 
-interface ColumnChartProps {
-    visitorsPerCountry: Map<string, number>;
-  }
+
 
 const ColumnChart: React.FC<ColumnChartProps> = ({visitorsPerCountry}) => {
   const state = {

@@ -1,10 +1,6 @@
 import React from 'react';
 import ApexChart from 'react-apexcharts';
 
-interface SparklineProps {
-  visitorsPerDay: Map<string, number>;
-  visitor : string
-}
 
 const Sparkline: React.FC<SparklineProps> = ({ visitorsPerDay ,visitor }) => {
   const values = Array.from(visitorsPerDay.values());
